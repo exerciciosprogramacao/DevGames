@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biblioteca de Jogos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">
+      <span class="logo-icon">▶</span>
+      <span>
+        <strong id="site-nome"></strong>
+        <small id="site-subtitulo"></small>
+      </span>
+    </a>
+    <nav class="tabs">
+      <button class="tab ativo" data-aba="loja">Loja</button>
+      <button class="tab" data-aba="biblioteca">Minha Biblioteca <span id="cont-favoritos" class="badge"></span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="destaques" class="destaques"></section>
+
+    <section id="recentes-secao" class="secao" hidden>
+      <h2>Jogados recentemente</h2>
+      <div id="recentes" class="faixa"></div>
+    </section>
+
+    <section class="secao">
+      <div class="filtros">
+        <input id="busca" type="search" placeholder="Buscar jogo ou aluno…" aria-label="Buscar">
+        <div id="filtro-plataformas" class="chips"></div>
+        <select id="filtro-tema" aria-label="Tema"></select>
+        <select id="ordenar" aria-label="Ordenar">
+          <option value="recentes">Mais recentes</option>
+          <option value="az">A–Z</option>
+          <option value="jogados">Mais jogados</option>
+        </select>
+      </div>
+      <h2 id="titulo-lista">Todos os jogos</h2>
+      <div id="grade" class="grade"></div>
+      <p id="vazio" class="vazio" hidden></p>
+    </section>
+  </main>
+
+  <dialog id="detalhe" class="detalhe">
+    <button class="fechar" aria-label="Fechar">✕</button>
+    <div id="detalhe-conteudo"></div>
+  </dialog>
+
+  <script src="games.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
